@@ -14,7 +14,7 @@ const Language: React.FC = () => {
   const newPath = isGerman ? path.replace('/de', '/en') : `/de${path}`;
 
   const toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    router.push(newPath)
+    router.push(newPath, { scroll: false })
   }
 
   return (

@@ -14,11 +14,15 @@ import { Textarea } from "@/components/ui/textarea"
 import { IoIosSend } from "react-icons/io";
 import { FaCheckCircle } from "react-icons/fa";
 
+import { ContactFormType } from '@/app/content/home/types'
 
 
-const ContactForm: React.FC = () => {
 
-  /* const { toast } = useToast() */
+const ContactForm: React.FC<ContactFormType> = (props) => {
+  const {
+    title, formFields: {
+      email, emailPlaceholder, message, messagePlaceholder, name, namePlaceholder, telephone, telephonePlaceholder, button
+    } } = props
 
   const {
     register,
@@ -53,21 +57,21 @@ const ContactForm: React.FC = () => {
 
       </div>
       <h1 className='my-5'>
-        Let's connect
+        {title}
       </h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className='font-light max-w-[600px] '>
         <div className=' flex flex-col gap-1 pb-2'>
           <label
             htmlFor="name">
-            Name
+            {name}
             <span className='text-destructive text-2xl'>*</span>
           </label>
           <Input
             type='text'
             {...register('name',
               { required: 'Name is required' })}
-            placeholder='e.g max'
+            placeholder={namePlaceholder}
           />
           {errors.name && <span className='text-destructive'>{`${errors.name.message}`}</span>}
         </div>
@@ -76,7 +80,7 @@ const ContactForm: React.FC = () => {
           <label
             htmlFor="email"
             className='flex gap-1 text-lg items-center font-extralight'>
-            Email
+            {email}
             <span className='text-destructive text-2xl'>*</span>
           </label>
           <Input
@@ -90,7 +94,7 @@ const ContactForm: React.FC = () => {
                 },
               }
             )}
-            placeholder='e.g max@gmail.com'
+            placeholder={emailPlaceholder}
           />
           {errors.email && <span className='text-destructive'>{`${errors.email.message}`}</span>}
         </div>
@@ -112,20 +116,20 @@ const ContactForm: React.FC = () => {
           <label
             htmlFor='message'
             className='flex gap-1 text-lg items-center font-extralight'>
-            Message
+            {message}
           </label>
 
           <Textarea
             className='text-[1rem] bg-[var(--input)]'
             {...register('message')}
-            placeholder='Your message here...'
+            placeholder={messagePlaceholder}
           />
         </div>
 
         <div className='mt-3'>
           <Button
             disabled={isSubmitting}
-            className='rounded-full' type='submit'>Send <IoIosSend className='ml-3' /></Button>
+            className='rounded-full' type='submit'>{button} <IoIosSend className='ml-3' /></Button>
         </div>
 
 

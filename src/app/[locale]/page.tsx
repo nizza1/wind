@@ -26,7 +26,8 @@ export default function Home({ params }: Props) {
   const {
     HeroSection,
     TechnologySection,
-    AboutSection
+    AboutSection,
+    ContactForm
   } = content;
 
 
@@ -34,7 +35,9 @@ export default function Home({ params }: Props) {
     <main className=" min-h-screen">
       <Hero {...HeroSection} />
       <Tech {...TechnologySection} />
-      <About {...AboutSection} />
+      <About
+        {...AboutSection}
+        contactForm={ContactForm} />
       <Toaster />
     </main>
   );

@@ -1,17 +1,20 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import { IoLanguageOutline } from 'react-icons/io5'
-import { useAppDispatch, useAppSelector } from '@/app/globalState/hooks'
-import { changeLanguage } from '@/app/globalState/feature/lang'
+
+import { useRouter, usePathname } from 'next/navigation';
 
 const Language: React.FC = () => {
 
-  const language = useAppSelector((state) => state.language.value);
-  const dispatch = useAppDispatch();
+  const router = useRouter()
+  const path = usePathname()
 
+  const isGerman = path.startsWith('/de');
+  const lang = isGerman ? 'en' : 'de'; // Toggle the 
+  const newPath = isGerman ? path.replace('/de', '/en') : `/de${path}`;
 
   const toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatch(changeLanguage());
+    router.push(newPath)
   }
 
   return (
@@ -21,7 +24,7 @@ const Language: React.FC = () => {
         className='text-[1rem] rounded-full flex border-[1px] border-[var(--border)] justify-center items-center h-8 px-2 gap-2' >
         <IoLanguageOutline />
 
-        {language === 'en' ? <>DE</> : <>EN</>}
+        {lang === 'de' ? <>EN</> : <>DE</>}
       </button>
     </div>
   )

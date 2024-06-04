@@ -1,24 +1,20 @@
 import React from 'react'
 import Image from 'next/image'
-
 import Nizar from '/public/Nizar.jpg'
-
 import ContactForm from '../forms/contactForm/contactForm'
+import { ContactFormType } from '@/app/content/home/types'
+import { AboutSectionType } from '@/app/content/home/types'
 
-type Props = {
-  title: string,
-  greeting: string,
-  imgText: string,
-  aboutText: {
-    text1: string,
-    text2: string
-  }
+
+interface Props extends AboutSectionType {
+  contactForm: ContactFormType
 }
+/* type Props = AboutSectionType */
 
 
 const About = (props: Props) => {
 
-  const { greeting, imgText, aboutText } = props
+  const { greeting, imgText, aboutText, contactForm } = props
 
   return (
     <section className=''>
@@ -55,7 +51,7 @@ const About = (props: Props) => {
 
         </article>
 
-        <ContactForm />
+        <ContactForm {...contactForm} />
       </div>
 
     </section>

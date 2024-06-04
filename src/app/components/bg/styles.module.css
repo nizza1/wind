@@ -1,0 +1,34 @@
+
+
+.bg {
+    /* height: 100%;
+    width: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+   /*  height: 100vh ;
+    height: 100lvh; */
+   /*  height: 100dvh; */
+   /*  height: 100dvh;
+    height: 100svh; */
+    right: 0;
+    z-index: -1;
+    /* background: var(--background-gradient); */
+   /*  transition-duration: .6s;
+    transition-timing-function: ease-in-out; */
+
+}
+.dark {
+    background-color: #04083f68;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(10, 69, 198, 0.4), transparent);
+    transition-duration:background-image .2s;
+}
+
+.light {
+    background-color: #e8e9f2; /* Light background */
+   background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(8, 133, 249, 0.4), transparent);
+   transition-duration:background-image .2s;
+}
+

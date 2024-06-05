@@ -1,7 +1,7 @@
 
-import Hero from '../components/hero/hero'
-import Tech from "../components/skills/skills";
-import About from '../components/about/about'
+import Hero from '../components/home/hero/hero'
+import Tech from "../components/home/skills/skills";
+import About from '../components/home/about/about'
 import { Toaster } from "@/components/ui/sonner"
 import contentDE from '@/app/content/home/HomeDE';
 import contentEN from '@/app/content/home/HomeEN';

@@ -3,9 +3,9 @@ import localFont from 'next/font/local'
 import "./globals.css";
 
 import Bb from "@/app/components/bg/gb";
-import Header from "../components/header/header";
+import Header from "../components/layout/header/header";
 
-import Footer from "@/app/components/footer/footer";
+import Footer from "@/app/components/layout/footer/footer";
 import Provider from "../globalState/provider";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Nizar from '/public/Nizar.jpg'
-import ContactForm from '../forms/contactForm/contactForm'
+import ContactForm from '../../forms/contactForm/contactForm'
 import { ContactFormType } from '@/app/content/home/types'
 import { AboutSectionType } from '@/app/content/home/types'
 

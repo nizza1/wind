@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
 import "./globals.css";
-
-import Bb from "@/app/components/bg/gb";
 import Header from "../components/layout/header/header";
-
 import Footer from "@/app/components/layout/footer/footer";
 import Provider from "../globalState/provider";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
@@ -36,12 +33,11 @@ export default function RootLayout({
 
   return (
     <html lang={params.locale}>
-      <body className={`${mona.className}`}>
+      <body className={mona.className}>
         <Provider>
           <Header />
-          {/*    <Bb /> */}
           {children}
-          <Footer />
+          <Footer locale={params.locale} />
         </Provider>
       </body>
     </html>

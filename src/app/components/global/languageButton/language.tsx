@@ -24,7 +24,7 @@ const Language: React.FC = () => {
         className='text-[1rem] rounded-full flex border-[1px] border-[var(--border)] justify-center items-center h-8 px-2 gap-2' >
         <IoLanguageOutline />
 
-        {lang === 'de' ? <>EN</> : <>DE</>}
+        {lang === 'de' ? <>🇩🇪</> : <>🇺🇸</>}
       </button>
     </div>
   )

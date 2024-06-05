@@ -4,11 +4,11 @@ import { FooterTypes } from "./types"
 export const Content: FooterTypes = {
     links: [
         {
-            name: 'imprint',
+            name: 'Imprint',
             href: 'imprint'
         },
         {
-            name: 'privacy',
+            name: 'Privacy Policy',
             href: 'privacy'
         }
     ]

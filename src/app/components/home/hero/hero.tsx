@@ -3,7 +3,6 @@ import styles from './styles.module.css'
 
 import Tech from '../teck/tech'
 
-
 /* import { Button } from '@/components/ui/button' */
 import { ScrollButton } from './handleScroll';
 import Image from 'next/image';
@@ -11,10 +10,7 @@ import Image from 'next/image';
 /* 
 bg-clip-text text-transparent bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600
  */
-import bgImage from '/public/bbblurry (4).svg';
-
-
-
+/* import bgImage from '/public/bbblurry (2).svg'; */
 
 type Content = {
   title: string,
@@ -26,7 +22,7 @@ const Hero: React.FC<Content> = ({ title, subtitle, button }) => {
 
   return (
     <section className='relative'>
-      {/* <Image src={bgImage}
+      {/*    <Image src={bgImage}
         alt='bgImage'
         fill={true}
         objectFit='cover'

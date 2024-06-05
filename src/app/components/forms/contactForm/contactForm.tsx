@@ -103,12 +103,12 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
           <label
             htmlFor="tel"
             className='flex gap-1 text-lg items-center font-extralight'>
-            Telephon
+            {telephone}
           </label>
           <Input
             type='tel'
             {...register('tel')}
-            placeholder='e.g +1 123-456-7890'
+            placeholder={telephonePlaceholder}
           />
         </div>
 

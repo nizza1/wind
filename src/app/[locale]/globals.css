@@ -26,7 +26,8 @@
       /*  --bg-img: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(8, 133, 249, 0.4), transparent); */
 
       --max-width: 1200px;
-      --background: #d9dfee;
+      /*  --background: #d9dfee; */
+      --background: #e7ebf3;
       --foreground: #0b082d;
       --wave-color: rgb(206, 219, 253);
 
@@ -62,7 +63,8 @@
 
       /*  --bg-transp: rgba(240, 248, 255, 0.154); */
       --bg-transp: rgba(0, 2, 4, 0.098);
-      --html-bg: rgb(218, 225, 243);
+      /*  --html-bg: rgb(218, 225, 243); */
+      --html-bg: rgb(236, 240, 250);
       --success-foreground: rgb(75, 148, 75);
       --border-animation: aliceblue;
 

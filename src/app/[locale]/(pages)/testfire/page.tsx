@@ -60,10 +60,6 @@ const Page = async () => {
 
                 <Form />
 
-
-
-
-
             </section>
 
         </main>

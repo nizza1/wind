@@ -31,22 +31,30 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
   } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(data);
-    // Trigger a toast notification upon successful form submission
-    /*  toast({
-         variant: 'default',
-         title: "Message has been submitted",
-         description: "I will reach out to you soon.",
-         }); */
+
+    const sendContactForm = async (data: FieldValues) =>
+      fetch('api/send', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'content-type': 'application/json',
+          accept: 'application/json',
+        }
+      })
+
+    const res = await sendContactForm(data);
+    console.log(res)
+
     const suc = <div className='bg-[var(--background)] p-3 border-[1px] rounded-sm shadow-inherit flex items-center gap-3 '>
       <FaCheckCircle className='text-[var(--success-foreground)]' />
-      <p className='text-[var(--success-foreground)]'>message has been successf</p>
+      <p className='text-[var(--success-foreground)]'>Email sent successfully</p>
     </div>
-    toast(suc, {
-      unstyled: true,
-      icon: <FaCheckCircle />,
-    });
+    {
+      if (res.ok) toast(suc, {
+        unstyled: true,
+        icon: <FaCheckCircle />,
+      })
+    }
 
   }
 
@@ -139,3 +147,13 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
 }
 
 export default ContactForm
+
+
+
+
+// Trigger a toast notification upon successful form submission
+/*  toast({
+     variant: 'default',
+     title: "Message has been submitted",
+     description: "I will reach out to you soon.",
+     }); */

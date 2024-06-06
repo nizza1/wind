@@ -8,7 +8,7 @@ import { Form } from './formfire';
 import DelButton from './delButton';
 
 
-export const revalidate = 60
+export const revalidate = 60;
 
 
 const getEmails = async () => {
@@ -26,7 +26,7 @@ const getEmails = async () => {
         return cc;
     } catch (err) {
         console.log('error:', err);
-        return [''];
+        return [];
     }
 }
 
@@ -34,6 +34,8 @@ const getEmails = async () => {
 const Page = async () => {
 
     const data: DocumentData = await getEmails()
+
+    console.log(data);
 
 
     return (

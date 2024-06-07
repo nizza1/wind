@@ -4,7 +4,7 @@ import { ContentType } from "./types"
 const Content: ContentType[] = [
     {
         "HeroSection": {
-            "title": "Website or App in Weeks, Not Months 🚀",
+            "title": "Website or App in weeks, not months 🚀",
             "subtitle": "Specialized in React and Next.js",
             "button": "Get in touch"
         },

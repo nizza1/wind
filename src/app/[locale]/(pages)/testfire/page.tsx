@@ -8,24 +8,17 @@ import { Form } from './formfire';
 import DelButton from './delButton';
 
 
-export const revalidate = 60;
+/* export const revalidate = 60; */
+export const dynamic = 'force-dynamic'
 
 
-const getEmails = async () => {
+
+const getData = async () => {
     try {
-        const coll = await getDocs(collection(db, 'newsletter'))
-        /*  const emails = coll.docs.map((doc: DocumentData) => doc.data().email); */
-
-        const cc = coll.docs.map((doc: DocumentData) => (
-            {
-                id: doc.id,
-                ...doc.data()
-            }
-        ))
-
-        return cc;
+        const coll = await getDocs(collection(db, 'newsletter'));
+        return coll.docs.map((doc: DocumentData) => ({ id: doc.id, ...doc.data() }));
     } catch (err) {
-        console.log('error:', err);
+        console.error('Error fetching emails:', err);
         return [];
     }
 }
@@ -33,10 +26,7 @@ const getEmails = async () => {
 
 const Page = async () => {
 
-    const data: DocumentData = await getEmails()
-
-    console.log(data);
-
+    const data: DocumentData = await getData()
 
     return (
         <main className='min-h-screen'>
@@ -45,18 +35,21 @@ const Page = async () => {
                     here is the test page
                 </h1>
 
-                {data.map((email: string, i: number) => (
-                    <div key={`d${i}`}>{Object.entries(email).map(([key, value]) => (
-                        <div key={key}>
-
-                            {key === 'id' ? <DelButton id={value} /> :
-                                <p > {key}: {value}</p>}
-
-                        </div>
-                    )
-                    )}</div>
-                )
-                )}
+                {data.map((email: DocumentData) => (
+                    <div key={email.id}>
+                        {Object.entries(email).map(([key, value]) => (
+                            <div key={`${email.id}-${key}`}>
+                                {key === 'id' ? (
+                                    <DelButton id={value} />
+                                ) : (
+                                    <p>
+                                        {key}: {value}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                ))}
 
                 <Form />
 

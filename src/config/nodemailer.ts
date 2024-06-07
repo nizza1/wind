@@ -53,14 +53,3 @@ export const mailOptions: nodemailer.SendMailOptions = {
     text: 'test',
     html: 'test'
 };
-
-const send = async () => {
-    try {
-        await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully');
-    } catch (error) {
-        console.error('Error sending email:', error);
-    }
-};
-
-send();

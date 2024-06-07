@@ -3,9 +3,9 @@ import { ContentType } from "./types"
 const Content: ContentType[] = [
     {
         HeroSection: {
-            title: "Ich entwickle benutzerzentrierte Web-UIs",
-            subtitle: "Schwerpunkt React / Next.js",
-            button: "Kontakt"
+            title: "Website oder App in Wochen statt Monaten 🚀",
+            subtitle: "Spezialisiert auf React und Next.js",
+            button: "Kontaktiere mich"
         },
         TechnologySection: {
             title: "Technologien"
@@ -13,20 +13,20 @@ const Content: ContentType[] = [
         AboutSection: {
             title: "Über mich",
             greeting: "Hallo 👋🏻,",
-            imgText: "mein Name ist Nizar",
+            imgText: "Mein Name ist Nizar",
             aboutText: {
-                text1: "Ein leidenschaftlicher und erfahrener Webentwickler mit großem Interesse an der Erstellung innovativer und benutzerfreundlicher Weblösungen.",
-                text2: "Mit einem soliden technischen Hintergrund in JavaScript, React, Node.js und jahrelanger Erfahrung in der Entwicklung sowohl von Front-End- als auch Back-End-Lösungen, strebe ich danach, ansprechende und effektive Websites und Anwendungen zu erstellen, die den digitalen Anforderungen moderner Unternehmen gerecht werden."
+                text1: "Ich bin ein leidenschaftlicher Webentwickler mit einem starken Fokus auf die Erstellung innovativer und benutzerfreundlicher Weblösungen.",
+                text2: "Mit fundierten Kenntnissen in JavaScript, React und Node.js sowie jahrelanger Erfahrung in der Front-End- und Back-End-Entwicklung erstelle ich ansprechende und effektive Websites und Anwendungen, die den digitalen Anforderungen moderner Unternehmen gerecht werden."
             }
         },
         ContactForm: {
-            title: "Lass uns verbinden",
+            title: "Lass uns in Kontakt treten",
             formFields: {
                 name: "Name",
-                namePlaceholder: "z.B. Max", email: "E-Mail",
-                emailPlaceholder: "z.B. max@gmail.com",
+                namePlaceholder: "e.g. Max", email: "E-Mail",
+                emailPlaceholder: "e.g. max@gmail.com",
                 telephone: "Telefon",
-                telephonePlaceholder: "+49 323424",
+                telephonePlaceholder: "+49 323424...",
                 message: "Nachricht",
                 messagePlaceholder: "Deine Nachricht",
                 button: "Senden"

@@ -4,30 +4,30 @@ import { ContentType } from "./types"
 const Content: ContentType[] = [
     {
         "HeroSection": {
-            "title": "Web Developer",
-            "subtitle": "with focus on front-end (React/Nextjs)",
+            "title": "Website or App in Weeks, Not Months 🚀",
+            "subtitle": "Specialized in React and Next.js",
             "button": "Get in touch"
         },
         "TechnologySection": {
-            "title": "Technology"
+            "title": "Technologies"
         },
         "AboutSection": {
             "title": "About",
             "greeting": "Hey there 👋🏻,",
-            "imgText": "my name is Nizar",
+            "imgText": "My name is Nizar",
             "aboutText": {
-                "text1": "A passionate and experienced web developer with a deep interest in crafting innovative and user-friendly web solutions.",
+                "text1": "I am a passionate web developer with a strong focus on creating innovative and user-friendly web solutions.",
                 "text2": "With a solid technical background in JavaScript, React, Node.js and years of experience in developing both front-end and back-end solutions, I strive to create engaging and effective websites and applications that meet the digital demands of modern businesses."
             }
         },
         "ContactForm": {
-            "title": "Let's connect",
+            "title": "Let's get in touch",
             "formFields": {
                 "name": "Name",
                 "namePlaceholder": "e.g. Max",
                 "email": "Email",
                 "emailPlaceholder": "e.g. max@gmail.com",
-                "telephone": "Telephone",
+                "telephone": "Phone",
                 "telephonePlaceholder": "+49 323424",
                 "message": "Message",
                 "messagePlaceholder": "Your message",

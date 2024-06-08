@@ -70,10 +70,12 @@ const Slider: React.FC<SliderTitle> = ({ title }) => {
           </h1>
           <div className='flex justify-between gap-3 pr-5'>
             <button onClick={scrollLeft}
+              aria-label="Scroll left"
               disabled={isAtStart}
               className={`${isAtStart ? 'text-[var(--border)]' : null} border-[1px] border-[var(--border-light)] rounded-full w-8 h-8 flex justify-center items-center`}>
               <FaArrowLeft /></button>
             <button onClick={scrollRight}
+              aria-label="Scroll right"
               disabled={isAtEnd}
               className={`${isAtEnd ? 'text-[var(--border)]' : null} border-[1px] border-[var(--border-light)] rounded-full w-8 h-8 flex justify-center items-center`}>
               <FaArrowRight /></button>

@@ -44,7 +44,7 @@ const Header = () => {
             </div>
           </div>
           <div className='text-4xl'>
-            <Link href={'/'}>
+            <Link href={'/'} aria-label="logo">
               <IoLogoGithub />
             </Link>
           </div>

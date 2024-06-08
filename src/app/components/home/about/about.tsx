@@ -32,7 +32,7 @@ const About = (props: Props) => {
                 fill={true}
                 alt='portfolio-developer'
                 placeholder='blur'
-                sizes="(max-width: 768px) 250px, (max-width: 1200px) 300px"
+                sizes="(max-width: 768px) 200px, (max-width: 1200px) 300px"
               />
             </div>
             <div>

@@ -76,6 +76,8 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
             <span className='text-destructive text-2xl'>*</span>
           </label>
           <Input
+            id='name'
+            autoComplete='name'
             type='text'
             {...register('name',
               { required: 'Name is required' })}
@@ -92,6 +94,8 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
             <span className='text-destructive text-2xl'>*</span>
           </label>
           <Input
+            id='email'
+            autoComplete='email'
             type='email'
             {...register('email',
               {
@@ -114,6 +118,8 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
             {telephone}
           </label>
           <Input
+            id='tel'
+            autoComplete='tel'
             type='tel'
             {...register('tel')}
             placeholder={telephonePlaceholder}
@@ -128,6 +134,7 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
           </label>
 
           <Textarea
+            id='message'
             className='text-[1rem] bg-[var(--input)]'
             {...register('message')}
             placeholder={messagePlaceholder}

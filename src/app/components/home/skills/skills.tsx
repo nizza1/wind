@@ -84,7 +84,7 @@ const Slider: React.FC<SliderTitle> = ({ title }) => {
 
 
         <div ref={scrollContainerRef}
-          className=' my-4 py-5 [mask-image:linear-gradient(to_right,white_80%,transparent_100%)] flex overflow-scroll gap-5 border-t-[1px] border-[var(--border)] no-scrollbar snap-mandatory snap-x scroll-pr-14 pr-14 scroll-smooth'>
+          className=' my-4 py-5 [mask-image:linear-gradient(to_right,white_80%,transparent_100%)] flex overflow-scroll gap-5 border-t-[1px] border-[var(--border)] no-scrollbar snap-mandatory snap-x scroll-pr-14 pr-14 scroll-smooth '>
 
           <ChildrenComponent >
             {cardsData.map(

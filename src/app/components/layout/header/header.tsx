@@ -53,7 +53,7 @@ const Header = () => {
 
           <div className='text-4xl flex gap-3 items-center'>
             <div className='flex gap-1 text[var(--icons-color)]'>
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <Language />
             </div>
           </div>

@@ -40,9 +40,9 @@ const Hero: React.FC<Content> = ({ title, subtitle, button }) => {
           <p className='text-1xl md:text-2xl text-center text-[var(--secondary-foreground)] z-[2]'>
             {subtitle}</p>
 
-          <div className='flex justify-center py-3 z-[2]'>
+          <div className='flex justify-center py-3 z-[2] '>
             <ScrollButton
-              className='rounded-full'
+              className='rounded-full shadow-xl'
               href='contact-form-h'
               text={button}
             />

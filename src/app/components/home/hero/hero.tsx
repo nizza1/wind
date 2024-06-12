@@ -34,7 +34,7 @@ const Hero: React.FC<Content> = ({ title, subtitle, button }) => {
 
         <div className='flex justify-center align-center  flex-col relative min-h-[500px] md:h-screen max-h-[1100px] '>
 
-          <h1 className='text-center md:text-3xl text-[1.6rem] mb-2 max-w-[25ch] mx-auto z-[2] font-normal'>
+          <h1 className='text-center md:text-3xl text-[1.6rem] mb-2 max-w-[22ch] mx-auto z-[2] font-normal'>
             {title}
           </h1>
           <p className='text-1xl md:text-2xl text-center text-[var(--secondary-foreground)] z-[2]'>

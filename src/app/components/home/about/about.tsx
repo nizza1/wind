@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Me from '/public/nizar.jpg';
+import Me from '/public/me.jpg';
 
 import ContactForm from '../../forms/contactForm/contactForm'
 import { ContactFormType } from '@/app/content/home/types'

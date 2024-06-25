@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Nizar from '/public/nizar.jpg';
+
 import ContactForm from '../../forms/contactForm/contactForm'
 import { ContactFormType } from '@/app/content/home/types'
 import { AboutSectionType } from '@/app/content/home/types'
@@ -9,7 +10,6 @@ import { AboutSectionType } from '@/app/content/home/types'
 interface Props extends AboutSectionType {
   contactForm: ContactFormType
 }
-/* type Props = AboutSectionType */
 
 
 const About = (props: Props) => {
@@ -19,10 +19,6 @@ const About = (props: Props) => {
   return (
     <section className=''>
       <div className='max-w-[var(--max-width)] px-5 py-10 mx-auto lg:flex'>
-        {/*  <h1>
-       py-10
-            About
-        </h1> */}
 
         <article className='py-5 max-w-[600px]'>
           <div className='flex items-center gap-5  rounded-full p-r-2'>

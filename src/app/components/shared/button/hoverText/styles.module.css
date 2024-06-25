@@ -1,0 +1,51 @@
+.text {
+    max-width: 25ch;
+    font-weight: 200;
+
+}
+
+.hoverText {
+    /* transition:
+    0.25s font-weight,
+    0.25s color; */
+    transition-duration: .3s ;
+    font-size: 150%;
+    font-weight: 300;
+  }
+  
+  .hoverText:hover {
+    color: #d8e9df;
+    font-weight: 900;
+
+  }
+  
+  /* To the right */
+  .hoverText:hover + .hoverText {
+    color: #d8e9df;
+    font-weight: 700;
+  }
+  
+  .hoverText:hover + .hoverText + .hoverText {
+    color: #d8e9df;
+    font-weight: 500;
+  }
+
+  .hoverText:hover + .hoverText + .hoverText + .hoverText {
+    color: #d8e9df;
+    font-weight: 300;
+  }
+  
+  /* To the left */
+  .hoverText:has(+ .hoverText:hover) {
+    color: #d8e9df;
+    font-weight: 700;
+  }
+  
+  .hoverText:has(+ .hoverText + .hoverText:hover) {
+    color: #d8e9df;
+    font-weight: 500;
+  }
+  .hoverText:has(+ .hoverText + .hoverText + .hoverText:hover) {
+    color: #d8e9df;
+    font-weight: 300;
+  }

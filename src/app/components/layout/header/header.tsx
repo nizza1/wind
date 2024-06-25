@@ -3,9 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 
-import ThemeToggle from '@/app/components/global/themeToggle/themeToggle';
-import Language from '@/app/components/global/languageButton/language';
-import { IoLogoGithub } from "react-icons/io";
+import ThemeToggle from '@/app/components/shared/themeToggle/themeToggle';
+import Language from '@/app/components/shared/languageButton/language';
 import Image from 'next/image';
 import Logo from '/public/niLogo.svg';
 
@@ -42,7 +41,7 @@ const Header = () => {
 
           <div className='text-4xl'>
             <Link href={'/'} aria-label="logo">
-              {/* <IoLogoGithub /> */}
+
               <Image
                 src={Logo}
                 alt='logo'
@@ -53,7 +52,7 @@ const Header = () => {
 
           <div className='text-4xl flex gap-3 items-center'>
             <div className='flex gap-1 text[var(--icons-color)]'>
-              {/* <ThemeToggle /> */}
+              <ThemeToggle />
               <Language />
             </div>
           </div>

@@ -1,5 +1,5 @@
 
-export type StringProps = {
+export type StringOb = {
     [key: string]: string;
 };
 
@@ -7,6 +7,11 @@ export interface HeroSectionType {
     title: string;
     subtitle: string;
     button: string;
+}
+
+export interface ServiceType {
+    title: string,
+    cardsData: StringOb[]
 }
 
 export interface TechnologySectionType {
@@ -42,7 +47,10 @@ export interface ContactFormType {
 
 export interface ContentType {
     HeroSection: HeroSectionType;
+    ServiceSection: ServiceType;
     TechnologySection: TechnologySectionType;
     AboutSection: AboutSectionType;
     ContactForm: ContactFormType;
 }
+
+

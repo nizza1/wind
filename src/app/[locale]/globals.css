@@ -63,10 +63,13 @@
 
       /*  --bg-transp: rgba(240, 248, 255, 0.154); */
       --bg-transp: rgba(0, 2, 4, 0.098);
-      /*  --html-bg: rgb(218, 225, 243); */
-      --html-bg: rgb(244, 247, 255);
+      --html-bg: #fafafa;
+      /*  --html-bg: rgb(244, 247, 255); */
       --success-foreground: rgb(75, 148, 75);
       --border-animation: aliceblue;
+
+      --card-light: rgba(255, 255, 255, 0.739);
+      --card-dark: rgba(0, 0, 0, 0.034);
 
     }
 
@@ -110,6 +113,9 @@
       --success-foreground: rgb(117, 250, 117);
       --border-animation: aliceblue;
 
+      --card-dark: rgba(255, 255, 255, 0.038);
+      --card-light: rgba(255, 255, 255, 0.052);
+
     }
   }
 
@@ -129,7 +135,7 @@
     form input[type="tel"],
     form input[type="number"],
     form textarea {
-      @apply border rounded-md p-2 bg-[var(--input)] shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent focus:bg-transparent text-[1rem];
+      @apply rounded-xl p-2 bg-[var(--card-dark)] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[1rem];
     }
   }
 

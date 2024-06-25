@@ -1,8 +1,9 @@
 
 import Hero from '../components/home/hero/hero'
-import Tech from "../components/home/skills/skills";
-import About from '../components/home/about/about'
-import { Toaster } from "@/components/ui/sonner"
+import About from '../components/home/about/about';
+import Service from '@/app/components/home/service/features';
+import Skills from '../components/home/skills/skills';
+import { Toaster } from "@/components/ui/sonner";
 import contentDE from '@/app/content/home/HomeDE';
 import contentEN from '@/app/content/home/HomeEN';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
@@ -25,6 +26,7 @@ export default function Home({ params }: Props) {
 
   const {
     HeroSection,
+    ServiceSection,
     TechnologySection,
     AboutSection,
     ContactForm
@@ -34,7 +36,8 @@ export default function Home({ params }: Props) {
   return (
     <main className=" min-h-screen">
       <Hero {...HeroSection} />
-      <Tech {...TechnologySection} />
+      <Service {...ServiceSection} />
+      <Skills {...TechnologySection} />
       <About
         {...AboutSection}
         contactForm={ContactForm} />

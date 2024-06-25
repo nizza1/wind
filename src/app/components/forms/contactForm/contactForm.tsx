@@ -135,7 +135,7 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
 
           <Textarea
             id='message'
-            className='text-[1rem] bg-[var(--input)]'
+            className='text-[1rem] '
             {...register('message')}
             placeholder={messagePlaceholder}
           />

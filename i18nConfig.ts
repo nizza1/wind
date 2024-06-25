@@ -4,7 +4,7 @@
  *  */
 
 const i18nConfig = {
-    locales: ['en', 'de', 'it'],
+    locales: ['en', 'de'],
     defaultLocale: 'en'
 } as const;
 

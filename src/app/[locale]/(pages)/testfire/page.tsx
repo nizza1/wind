@@ -3,13 +3,14 @@
 import React from 'react'
 import { getDocs, collection, DocumentData } from "firebase/firestore";
 import { db } from '@/lib/firebase/firebaseConfig';
-
 import { Form } from './formfire';
 import DelButton from './delButton';
+import { v4 as uuidv4 } from 'uuid';
 
 
-/* export const revalidate = 60; */
-export const dynamic = 'force-dynamic'
+
+/* export const revalidate = 5; */
+export const dynamic = 'force-dynamic';
 
 
 
@@ -24,6 +25,8 @@ const getData = async () => {
 }
 
 
+
+
 const Page = async () => {
 
     const data: DocumentData = await getData()
@@ -36,9 +39,9 @@ const Page = async () => {
                 </h1>
 
                 {data.map((email: DocumentData) => (
-                    <div key={email.id}>
+                    <div key={uuidv4()}>
                         {Object.entries(email).map(([key, value]) => (
-                            <div key={`${email.id}-${key}`}>
+                            <div key={uuidv4()}>
                                 {key === 'id' ? (
                                     <DelButton id={value} />
                                 ) : (

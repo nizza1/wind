@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# admin sdk firebase
+my-port-d82ff-firebase-adminsdk-orgn8-2ab3befcd2.json
+
 # vercel
 .vercel
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Nizar from '/public/nizar.jpg';
+import Me from '/public/nizar.jpg';
 
 import ContactForm from '../../forms/contactForm/contactForm'
 import { ContactFormType } from '@/app/content/home/types'
@@ -24,7 +24,7 @@ const About = (props: Props) => {
           <div className='flex items-center gap-5  rounded-full p-r-2'>
             <div className='relative md:min-w-32 md:w-32 md:h-32 w-28 h-28 min-w-28 bg-slate-200 rounded-full overflow-hidden shadow-md'>
               <Image
-                src={Nizar}
+                src={Me}
                 fill={true}
                 alt='portfolio-developer'
                 placeholder='blur'

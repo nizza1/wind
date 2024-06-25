@@ -9,7 +9,6 @@ import img3 from '/public/3dicons/tailoredSolustion.png';
 import img4 from '/public/3dicons/ongoing-support.png';
 import img5 from '/public/3dicons/seo.png';
 
-import FeatureContent from './content';
 import FeatureCard from './featureCard';
 import { ServiceType } from '@/app/content/home/types';
 

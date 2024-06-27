@@ -5,7 +5,7 @@ const Content: ContentType[] = [
         "HeroSection": {
             "title": "Website oder App in Wochen statt Monaten 🚀",
             "subtitle": "Spezialisiert auf React und Next.js",
-            "button": "Kontaktiere mich"
+            "button": "Kontakt"
         },
         "ServiceSection": {
             "title": "Kompetenzen",

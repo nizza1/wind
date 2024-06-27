@@ -9,7 +9,7 @@ const Content: ContentType[] = [
             "button": "Get in touch"
         },
         "ServiceSection": {
-            "title": "What I Do",
+            "title": "Competencies",
             "cardsData": [
                 {
                     "title": "Pixel-Perfect and Responsive UI",

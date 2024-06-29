@@ -13,9 +13,6 @@ const Page = () => {
     useAuth();
     const user = useSelector((state: RootState) => state.userProfile.user);
 
-    /*  if (!user) {
-         return <div>Loading...</div>;
-     } */
 
     return (
         <section className=' py-12 min-h-screen'>

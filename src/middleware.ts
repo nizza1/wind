@@ -2,8 +2,6 @@ import { i18nRouter } from 'next-i18n-router';
 import i18nConfig from '../i18nConfig';
 import { NextRequest, NextResponse } from 'next/server';
 
-/* import { verifyIdToken } from '@/lib/firebase/firbaseAdmin'; */
-
 // these are the routes that require authentication
 const protectedRoutes = ["/admin", "/dashboard"];
 
@@ -30,7 +28,24 @@ export async function middleware(request: NextRequest) {
     if (requiresAuth && !session) {
         return NextResponse.redirect(new URL("/login", origin));
     }
+    if (requiresAuth && session) {
+        try {
+            const response = await fetch(`${origin}/api/login`, {
+                method: 'GET',
+                headers: {
+                    'Cookie': `session=${session.value}`,
+                },
+            });
 
+            if (response.status !== 200) {
+                return NextResponse.redirect(new URL("/login", origin));
+            }
+
+        } catch (error) {
+            console.error('Error during session verification:', error);
+            return NextResponse.redirect(new URL("/login", origin));
+        }
+    }
 
     return i18nRouter(request, i18nConfig)
 }

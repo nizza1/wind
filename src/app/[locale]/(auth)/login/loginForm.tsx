@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ const Login = () => {
             const user = await signInWithEmail(email, password);
             const token = await user.getIdToken();
 
-            const authorize = await fetch("/api/login", {
+            const authorize = await fetch('/api/login', {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -38,14 +38,19 @@ const Login = () => {
     const handleGoogleSignIn = async () => {
         try {
             const user = await signInWithGoogle();
-
             const token = await user.getIdToken();
-            /* localStorage.setItem('authToken', token); */
-            const expiresInSeconds = 60 * 60 * 24 * 7; // 7 Tage
-            const expiresDate = new Date(Date.now() + expiresInSeconds * 1000);
-            /*     document.cookie = `accessToken=${token}; expires=${expiresDate.toUTCString()}; path=/; Secure; SameSite=None`; */
-            console.log('Angemeldeter Benutzer:', user);
-            // Weiterleitung oder andere Aktionen nach erfolgreicher Anmeldung
+
+            const authorize = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                }
+            })
+
+            if (authorize.status === 200) {
+                router.push('/dashboard')
+            }
+
         } catch (error) {
             console.error('Fehler bei der Google-Anmeldung:', error);
         }

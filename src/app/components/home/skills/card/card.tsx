@@ -19,7 +19,6 @@ const Card: React.FC<CardProps> = ({ title, description, Icon }) => {
       </div>
       <div className='text-center pt-2 pb-2 px-2 flex justify-center'>
         <h2 className='py-1 bg-[var(--card-light)] rounded-2xl w-fit px-4 '>{title}</h2>
-        {/* <p className='text-[var(--secondary-foreground)]'>{description}</p> */}
       </div>
     </div>
   );

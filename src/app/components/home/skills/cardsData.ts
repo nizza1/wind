@@ -6,6 +6,8 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { SiPayloadcms } from "react-icons/si";
 import { IconType } from "react-icons";
 import { SiTypescript } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
+
 
 
 export interface CardData {
@@ -30,9 +32,9 @@ export const cardsData: CardData[] = [
   },
   {
     id: 3,
-    title: "PostgreSQL",
+    title: "Firebase",
     description: "The world's most advanced open source relational database",
-    Icon: BiLogoPostgresql,
+    Icon: IoLogoFirebase,
   },
   {
     id: 4,

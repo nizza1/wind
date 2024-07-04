@@ -67,7 +67,7 @@ const Slider: React.FC<SliderProps> = ({ title, children }) => {
                 </div>
 
                 <div ref={scrollContainerRef}
-                    className='my-4 py-5 [mask-image:linear-gradient(to_right,white_70%,transparent_100%)] flex overflow-scroll gap-5 border-t-[1px] border-[var(--border)] no-scrollbar snap-mandatory snap-x scroll-pr-14 pr-14 scroll-smooth'>
+                    className='my-4 py-5 [mask-image:linear-gradient(to_right,white_70%,transparent_100%)] flex overflow-scroll gap-5 border-t-[1px] border-[var(--border)] no-scrollbar snap-mandatory snap-x scroll-pr-14 pr-14 md:scroll-pr-32 md:pr-32 scroll-smooth'>
                     {children}
                 </div>
             </article>

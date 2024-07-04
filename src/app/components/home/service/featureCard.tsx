@@ -20,7 +20,7 @@ const FeatureCard = (props: Props) => {
                 <p className='mb-auto'>{description}</p>
                 <div className=' flex justify-center '>
                     <Image
-
+                        placeholder='blur'
                         src={img}
                         alt='icons'
                         width={170}

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Me from '/public/me.jpg';
+import Me from '/public/Profile/portfolioImage.jpg';
 
 import ContactForm from '../../forms/contactForm/contactForm'
 import { ContactFormType } from '@/app/content/home/types'
@@ -26,6 +26,7 @@ const About = (props: Props) => {
               <Image
                 src={Me}
                 fill={true}
+                objectFit='cover'
                 alt='portfolio-developer'
                 placeholder='blur'
                 sizes="(max-width: 768px) 200px, (max-width: 1200px) 300px"

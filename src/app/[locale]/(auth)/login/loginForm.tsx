@@ -14,7 +14,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const router = useRouter();
 
-    const handleAction = async (e: React.FormEvent<Element>): Promise<void> => {
+    const handleAction = async (e: React.FormEvent<Element>) => {
         e.preventDefault();
         try {
             const user = await signInWithEmail(email, password);

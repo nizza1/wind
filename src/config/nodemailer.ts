@@ -1,9 +1,6 @@
 import nodemailer from 'nodemailer';
 
 
-
-
-
 const nizMail = 'nizardjassim@gmail.com';
 const email = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
@@ -11,20 +8,21 @@ const pass = process.env.EMAIL_PASS;
 if (!email || !pass) {
     throw new Error('Email and password must be defined in environment variables');
 }
+/*
+? add host, port prop in case of using SMTP  * */
 
 export const transporter = nodemailer.createTransport({
-    host: process.env.HOSTINGER_SMTP,
-    port: 465,
-    secure: true, // use SSL
+    service: 'gmail',
+    secure: true,
     auth: {
-        user: process.env.HOSTINGER_CONTACT_EMAIL,
-        pass: process.env.HOSTINGER_CONTACT_PASS
+        user: email,
+        pass: pass
     }
 });
 
 export const mailOptions: nodemailer.SendMailOptions = {
-    from: process.env.HOSTINGER_CONTACT_EMAIL,
-    to: `${nizMail},${email}`, // Comma-separated string
+    from: email,
+    to: [email, nizMail], // Comma-separated string
     subject: 'test',
     text: 'test',
     html: 'test'

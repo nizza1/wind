@@ -77,6 +77,7 @@
       /* --bg-img: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(10, 69, 198, 0.4), transparent); */
       --wave-color: rgba(124, 115, 251, 0.177);
       --background: rgb(0, 30, 59);
+      /* --background: #0E172A; */
       --foreground: rgb(206, 222, 235);
 
       --card: 222.2 84% 4.9%;
@@ -109,7 +110,9 @@
       --highlight-border: #83d4f9;
       --bg-transp: rgba(255, 255, 255, 0.056);
 
-      --html-bg: #081435;
+      /* --html-bg: #081435; */
+      /*  --html-bg: #0d1a36; */
+      --html-bg: #05112c;
       --success-foreground: rgb(117, 250, 117);
       --border-animation: aliceblue;
 

@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import ThemeReducer from './feature/theme-slice';
 import LanguageReducer from './feature/lang';
-import UserReducer from './feature/userProfile'
+
 
 export const store = configureStore({
     // handle the redux combine of reducer 
@@ -11,7 +11,6 @@ export const store = configureStore({
     reducer: {
         theme: ThemeReducer,
         language: LanguageReducer,
-        userProfile: UserReducer
     }
 })
 

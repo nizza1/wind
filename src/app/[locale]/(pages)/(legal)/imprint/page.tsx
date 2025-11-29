@@ -15,7 +15,7 @@ const Page = () => {
                         <h2>Kontkt:</h2>
                         {/* <p>Telefon: <a href="tel: +4917684070282">+49 1768 4070 282</a></p> */}
 
-                        <p>E-Mail: dev@nizzar.de</p>
+                        <p>E-Mail: contact@nizar-web.de</p>
                     </div>
 
                     <div className='py-3'>

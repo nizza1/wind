@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react'
 import { Button } from '@/components/ui/button';
-import { signOutUser } from '@/lib/firebase/firebaseAuth';
+// import { signOutUser } from '@/lib/firebase/firebaseAuth';
 import { useRouter } from 'next/navigation';
 
 
@@ -10,9 +10,8 @@ const LogoutButton = () => {
 
     const router = useRouter();
     const handleLogout = async () => {
-
-
-
+        console.log("Logout functionality temporarily disabled");
+        /*
         try {
             await signOutUser();
             // Clear the cookies in the server using our API in app/api/logout/route.ts
@@ -28,6 +27,7 @@ const LogoutButton = () => {
         } catch (err) {
             console.error('Fehler bei der Abmeldung:', err);
         }
+        */
     }
 
     return (

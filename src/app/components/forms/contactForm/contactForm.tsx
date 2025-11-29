@@ -32,8 +32,9 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
 
   const onSubmit = async (data: FieldValues) => {
 
-    const sendContactForm = async (data: FieldValues) =>
-      fetch('api/send', {
+    const sendContactForm = async (data: FieldValues) => {
+      console.log('Sending to:', `${process.env.NEXT_PUBLIC_SERVER_ACTION_URL}/api/send`);
+      return fetch(`${process.env.NEXT_PUBLIC_SERVER_ACTION_URL}/api/send`, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -41,6 +42,7 @@ const ContactForm: React.FC<ContactFormType> = (props) => {
           accept: 'application/json',
         }
       })
+    }
 
     const res = await sendContactForm(data);
     console.log(res)

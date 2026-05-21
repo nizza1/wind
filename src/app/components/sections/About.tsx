@@ -7,7 +7,6 @@ import { SectionLabel } from "@/app/components/ui/SectionLabel";
 import { Tag } from "@/app/components/ui/Tag";
 import { AboutSectionType } from "@/app/content/home/types";
 import { fadeUpContainer, fadeUpItemSlow } from "./animations";
-import myImg from "../../../../public/profile/portfolioImage.jpg";
 
 
 const About = ({ eyebrow, name, paragraph1, paragraph2, chips }: AboutSectionType) => (
@@ -23,7 +22,7 @@ const About = ({ eyebrow, name, paragraph1, paragraph2, chips }: AboutSectionTyp
       <motion.div variants={fadeUpItemSlow} className="hidden md:block">
         <div className="overflow-hidden rounded-[4px] border border-[var(--color-border)] w-[160px]">
           <Image
-            src={myImg}
+            src="/profile/portfolioImage.jpg"
             alt="Nizar"
             width={160}
             height={240}

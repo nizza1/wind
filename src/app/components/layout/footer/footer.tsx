@@ -1,26 +1,39 @@
-import React from 'react';
-import Link from 'next/link';
-import { Content as DE } from '@/app/content/layout/footer/footerDE';
-import { Content as EN } from '@/app/content/layout/footer/footerEN';
+import React from "react";
+import Link from "next/link";
+import { Content as DE } from "@/app/content/layout/footer/footerDE";
+import { Content as EN } from "@/app/content/layout/footer/footerEN";
 
 type Props = {
-  locale: string
-}
+  locale: string;
+};
 
 const Footer = ({ locale }: Props) => {
+  const content = locale === "de" ? DE : EN;
+  const { copyright, links } = content;
 
-  const content = locale === 'de' ? DE : EN;
-  const { links } = content;
   return (
-    <footer className='border-t-[1px] border-[var(--border)]  bg-[var(--html-bg)]'>
-      <article className=' py-5 max-w-[var(--max-width)] mx-auto px-5 '>
-        <div className='text-[var(--secondary-foreground)] flex justify-between'>
-          {links.map(link => <Link className='hover:text-[var(--foreground)] duration-75' href={link.href} >{link.name}</Link>)}
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+      <div className="max-w-[1100px] mx-auto px-5 py-5">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span className="font-raleway text-xs text-[var(--color-text-muted)] tracking-wide">
+            {copyright}
+          </span>
+          <nav className="flex items-center gap-5">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-raleway text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-150 tracking-wide"
+                {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
         </div>
-      </article>
-
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

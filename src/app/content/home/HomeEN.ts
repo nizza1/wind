@@ -1,70 +1,84 @@
-import { ContentType } from "./types"
+import { ContentType } from "./types";
 
+const Content: ContentType = {
+  HeroSection: {
+    eyebrow: "◆ Fullstack Developer · Nürnberg, DE",
+    titleLine1: "Building",
+    titleLine2: "products that",
+    titleLine3: "actually ship.",
+    subtitle:
+      "I work with startups and businesses — from first commit to production. I fix what needs fixing and solve real problems.",
+    ctaPrimary: "Start a project →",
+    tags: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Fullstack"],
+    availableBadge: "Available for projects",
+  },
+  StatsSection: {
+    columns: [
+      { label: "Design systems", sublabel: "Focus on reusability" },
+      { label: "Clean code", sublabel: "Focus on problem solving" },
+      { label: "Nürnberg · DE", sublabel: "Remote-ready worldwide" },
+    ],
+  },
+  ServicesSection: {
+    eyebrow: "What I do",
+    cards: [
+      {
+        icon: "⬡",
+        title: "Web & App Development",
+        body: "I build production-ready applications — clean architecture, reusable components, and a focus on solving the actual problem. Not just making it work, but making it right.",
+        featured: true,
+      },
+      {
+        icon: "◈",
+        title: "UI Engineering & Design Systems",
+        body: "From design tokens to component libraries — I implement interfaces that are pixel-perfect, accessible, and built to scale across products.",
+      },
+      {
+        icon: "◎",
+        title: "AI Integration & Workflows",
+        body: "I integrate AI APIs and automation workflows into products — from LLM-powered features to intelligent process automation.",
+      },
+      {
+        icon: "⟁",
+        title: "Consulting & Problem Solving",
+        body: "Architecture decisions, code reviews, sprint support. I think in systems and deliver pragmatic solutions — whatever the codebase, whatever the problem.",
+      },
+    ],
+  },
+  AboutSection: {
+    eyebrow: "About",
+    name: "Hey, I'm Nizar.",
+    paragraph1:
+      "I'm a fullstack developer based in Nürnberg with a deep focus on JavaScript ecosystems. I build things that are fast, maintainable, and enjoyable to use — for end users and for the developers who come after me.",
+    paragraph2:
+      "I care about clean architecture, good decisions made early, and shipping on time. Whether you need a product built from scratch or a developer to strengthen your team — I bring both technical depth and a pragmatic mindset.",
+    chips: ["JavaScript / TypeScript", "React & Next.js", "Node.js & APIs", "Headless CMS"],
+  },
+  StackSection: {
+    eyebrow: "Tech stack",
+    items: [
+      "React", "Next.js", "TypeScript", "Node.js",
+      "Tailwind CSS", "Framer Motion", "PostgreSQL", "Drizzle ORM",
+      "Sanity", "Strapi", "Payload CMS", "Remix",
+      "Stripe",
+    ],
+  },
+  ContactSection: {
+    headline: "Got a project in",
+    headlineAccent: "mind?",
+    subline:
+      "Whether it's a new product, a redesign, or you need a developer on-call — let's talk.",
+    cta: "Send a message →",
+    form: {
+      name: "Name",
+      namePlaceholder: "e.g. Max",
+      email: "Email",
+      emailPlaceholder: "e.g. max@example.com",
+      message: "Message",
+      messagePlaceholder: "Tell me about your project",
+      submit: "Send message →",
+    },
+  },
+};
 
-const Content: ContentType[] = [
-    {
-        "HeroSection": {
-            "title": "Website or App in weeks, not months 🚀",
-            "subtitle": "Specialized in React and Next.js",
-            "button": "Get in touch"
-        },
-        "ServiceSection": {
-            "title": "Competencies",
-            "cardsData": [
-                {
-                    "title": "Pixel-Perfect and Responsive UI",
-                    "description": "I create visually stunning and highly responsive user interfaces that look perfect on all devices."
-                },
-                {
-                    "title": "Cutting-Edge Technology",
-                    "description": "Benefit from the latest technologies like React and Next.js, which provide superior performance and scalability.",
-
-                },
-                {
-                    "title": "Tailored Solutions",
-                    "description": "Every business is unique. I offer customized solutions that fit your specific needs and goals.",
-
-                },
-                {
-                    "title": "Ongoing Support",
-                    "description": "My services don’t end at launch. I offer ongoing support and maintenance to ensure your online platform stays up-to-date.",
-
-                },
-                {
-                    "title": "SEO Optimization",
-                    "description": "Increase your online visibility and attract more visitors with a digital solution that is optimized for search engines.",
-
-                }
-            ]
-        },
-        "TechnologySection": {
-            "title": "Technologies"
-        },
-        "AboutSection": {
-            "title": "About",
-            "greeting": "Hey there 👋🏻,",
-            "imgText": "My name is Nizar",
-            "aboutText": {
-                "text1": "I am a passionate web developer with a strong focus on creating innovative and user-friendly web solutions.",
-                "text2": "With a solid technical background in JavaScript, React, Node.js and years of experience in developing both front-end and back-end solutions, I strive to create engaging and effective websites and applications that meet the digital demands of modern businesses."
-            }
-        },
-        "ContactForm": {
-            "title": "Let's get in touch",
-            "formFields": {
-                "name": "Name",
-                "namePlaceholder": "e.g. Max",
-                "email": "Email",
-                "emailPlaceholder": "e.g. max@gmail.com",
-                "telephone": "Phone",
-                "telephonePlaceholder": "+49 323424",
-                "message": "Message",
-                "messagePlaceholder": "Your message",
-                "button": "Send"
-            }
-        }
-    }
-]
-
-export default Content
-
+export default Content;

@@ -1,168 +1,121 @@
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  @layer utilities {
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+@layer base {
+  :root {
+    --color-bg:           #0A0A0A;
+    --color-bg-surface:   #111111;
+    --color-bg-card:      #141414;
+    --color-text:         #FFFFFF;
+    --color-text-muted:   rgba(255, 255, 255, 0.45);
+    --color-border:       rgba(255, 255, 255, 0.08);
+    --color-accent:       #C8FF00;
+    --color-accent-text:  #000000;
 
-    /* Hide scrollbar for IE, Edge and Firefox */
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      /* IE and Edge */
-      scrollbar-width: none;
-      /* Firefox */
-    }
+    --max-width: 1100px;
+    --radius: 0.25rem;
+
+    /* shadcn compat */
+    --background:          var(--color-bg);
+    --foreground:          var(--color-text);
+    --border:              var(--color-border);
+    --input:               rgba(255, 255, 255, 0.06);
+    --ring:                var(--color-accent);
+    --card:                var(--color-bg-card);
+    --card-foreground:     var(--color-text);
+    --primary:             var(--color-accent);
+    --primary-foreground:  var(--color-accent-text);
+    --secondary:           var(--color-bg-surface);
+    --secondary-foreground: var(--color-text);
+    --muted:               var(--color-bg-surface);
+    --muted-foreground:    var(--color-text-muted);
+    --accent:              var(--color-bg-surface);
+    --accent-foreground:   var(--color-text);
+    --destructive:         #EF4444;
+    --destructive-foreground: #FFFFFF;
+    --popover:             var(--color-bg-card);
+    --popover-foreground:  var(--color-text);
   }
 
-  @layer base {
-
-
-    :root {
-
-      /*  --bg-img: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(8, 133, 249, 0.4), transparent); */
-
-      --max-width: 1200px;
-      /*  --background: #d9dfee; */
-      --background: #e7ebf3;
-      --foreground: #0b082d;
-      --wave-color: rgb(206, 219, 253);
-
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-
-      --primary: 222.2 47.4% 11.2%;
-      --primary-foreground: 210 40% 98%;
-
-      --secondary: 210 40% 96.1%;
-      --secondary-foreground: #030303b7;
-
-      --muted: 210 40% 96.1%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-
-      --accent: 210 40% 96.1%;
-      --accent-foreground: 222.2 47.4% 11.2%;
-
-      --destructive: #EF4444;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: rgba(0, 0, 0, 0.092);
-      --input: rgba(0, 0, 0, 0.046);
-      --ring: 222.2 84% 4.9%;
-
-      --radius: 0.5rem;
-
-
-      --highlight-border: rgb(0, 81, 255);
-
-      /*  --bg-transp: rgba(240, 248, 255, 0.154); */
-      --bg-transp: rgba(0, 2, 4, 0.098);
-      --html-bg: #fafafa;
-      /*  --html-bg: rgb(244, 247, 255); */
-      --success-foreground: rgb(75, 148, 75);
-      --border-animation: aliceblue;
-
-      --card-light: rgba(255, 255, 255, 0.739);
-      --card-dark: rgba(0, 0, 0, 0.034);
-
-    }
-
-    .dark {
-      /* --bg-img: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(10, 69, 198, 0.4), transparent); */
-      --wave-color: rgba(124, 115, 251, 0.177);
-      --background: rgb(0, 30, 59);
-      /* --background: #0E172A; */
-      --foreground: rgb(206, 222, 235);
-
-      --card: 222.2 84% 4.9%;
-      --card-foreground: 210 40% 98%;
-
-      --popover: 222.2 84% 4.9%;
-      --popover-foreground: 210 40% 98%;
-
-      --primary: 210 40% 98%;
-      --primary-foreground: 222.2 47.4% 11.2%;
-
-      --secondary: 217.2 32.6% 17.5%;
-      --secondary-foreground: #94A3B8;
-
-      --muted: 217.2 32.6% 17.5%;
-      --muted-foreground: 215 20.2% 65.1%;
-
-      --accent: rgb(1, 27, 61);
-      --accent-foreground: aliceblue;
-
-      --destructive: #fb5656;
-      --destructive-foreground: 210 40% 98%;
-
-      --border: rgba(222, 223, 251, 0.172);
-      --input: rgba(252, 252, 255, 0.058);
-      --ring: 212.7 26.8% 83.9%;
-
-
-      /* --highlight-border: #2F2E80; */
-      --highlight-border: #83d4f9;
-      --bg-transp: rgba(255, 255, 255, 0.056);
-
-      /* --html-bg: #081435; */
-      /*  --html-bg: #0d1a36; */
-      --html-bg: #05112c;
-      --success-foreground: rgb(117, 250, 117);
-      --border-animation: aliceblue;
-
-      --card-dark: rgba(255, 255, 255, 0.038);
-      --card-light: rgba(255, 255, 255, 0.052);
-
-    }
+  .dark {
+    --color-bg:           #0A0A0A;
+    --color-bg-surface:   #111111;
+    --color-bg-card:      #141414;
+    --color-text:         #FFFFFF;
+    --color-text-muted:   rgba(255, 255, 255, 0.45);
+    --color-border:       rgba(255, 255, 255, 0.08);
+    --color-accent:       #C8FF00;
+    --color-accent-text:  #000000;
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
+  html.light,
+  html:not(.dark) {
+    --color-bg:           #FAFAFA;
+    --color-bg-surface:   #F2F2F0;
+    --color-bg-card:      #FFFFFF;
+    --color-text:         #0A0A0A;
+    --color-text-muted:   rgba(10, 10, 10, 0.45);
+    --color-border:       rgba(10, 10, 10, 0.08);
+    --color-accent:       #8FCC00;
+    --color-accent-text:  #000000;
 
-    body {
-      @apply text-foreground;
+    --background:          var(--color-bg);
+    --foreground:          var(--color-text);
+    --border:              var(--color-border);
+    --input:               rgba(0, 0, 0, 0.05);
+    --card:                var(--color-bg-card);
+    --card-foreground:     var(--color-text);
+    --primary:             var(--color-accent);
+    --primary-foreground:  var(--color-accent-text);
+    --secondary:           var(--color-bg-surface);
+    --secondary-foreground: var(--color-text);
+    --muted:               var(--color-bg-surface);
+    --muted-foreground:    var(--color-text-muted);
+    --destructive:         #DC2626;
+    --destructive-foreground: #FFFFFF;
+    --popover:             var(--color-bg-card);
+    --popover-foreground:  var(--color-text);
+  }
 
-    }
-
-    form input[type="text"],
-    form input[type="email"],
-    form input[type="password"],
-    form input[type="tel"],
-    form input[type="number"],
-    form textarea {
-      @apply rounded-xl p-2 bg-[var(--card-dark)] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-[1rem];
-    }
+  * {
+    @apply border-border;
+    box-sizing: border-box;
   }
 
   html {
-    background-color: var(--html-bg);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    scroll-behavior: smooth;
   }
 
-  main {
-    /*  background-color: var(--background); */
-
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1 {
-    font-size: 1.3rem;
-    font-weight: 300;
-  }
-
-  h2,
-  h3 {
-    font-weight: 400;
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--color-text);
   }
 
   p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--secondary-foreground);
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
+}

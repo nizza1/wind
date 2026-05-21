@@ -1,56 +1,71 @@
-
-export type StringOb = {
-    [key: string]: string;
-};
-
 export interface HeroSectionType {
-    title: string;
-    subtitle: string;
-    button: string;
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  titleLine3: string;
+  subtitle: string;
+  ctaPrimary: string;
+  tags: string[];
+  availableBadge: string;
 }
 
-export interface ServiceType {
-    title: string,
-    cardsData: StringOb[]
+export interface StatColumnType {
+  label: string;
+  sublabel: string;
 }
 
-export interface TechnologySectionType {
-    title: string;
+export interface StatsSectionType {
+  columns: [StatColumnType, StatColumnType, StatColumnType];
 }
 
-export interface AboutTextType {
-    text1: string;
-    text2: string;
+export interface ServiceCardType {
+  icon: string;
+  title: string;
+  body: string;
+  featured?: boolean;
+}
+
+export interface ServicesSectionType {
+  eyebrow: string;
+  cards: [ServiceCardType, ServiceCardType, ServiceCardType, ServiceCardType];
 }
 
 export interface AboutSectionType {
-    title: string;
-    greeting: string;
-    imgText: string;
-    aboutText: AboutTextType;
+  eyebrow: string;
+  name: string;
+  paragraph1: string;
+  paragraph2: string;
+  chips: string[];
 }
 
-export interface ContactFormType {
-    title: string;
-    formFields: {
-        name: string;
-        namePlaceholder: string;
-        email: string;
-        emailPlaceholder: string;
-        telephone: string;
-        telephonePlaceholder: string;
-        message: string;
-        messagePlaceholder: string;
-        button: string;
-    };
+export interface StackSectionType {
+  eyebrow: string;
+  items: string[];
+}
+
+export interface ContactFormFields {
+  name: string;
+  namePlaceholder: string;
+  email: string;
+  emailPlaceholder: string;
+  message: string;
+  messagePlaceholder: string;
+  submit: string;
+}
+
+export interface ContactSectionType {
+  headline: string;
+  headlineAccent: string;
+  subline: string;
+  cta: string;
+  form: ContactFormFields;
 }
 
 export interface ContentType {
-    HeroSection: HeroSectionType;
-    ServiceSection: ServiceType;
-    TechnologySection: TechnologySectionType;
-    AboutSection: AboutSectionType;
-    ContactForm: ContactFormType;
+  HeroSection: HeroSectionType;
+  StatsSection: StatsSectionType;
+  ServicesSection: ServicesSectionType;
+  AboutSection: AboutSectionType;
+  StackSection: StackSectionType;
+  ContactSection: ContactSectionType;
 }
-
-

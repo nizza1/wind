@@ -1,64 +1,84 @@
-import { ContentType } from "./types"
+import { ContentType } from "./types";
 
-const Content: ContentType[] = [
-    {
-        "HeroSection": {
-            "title": "Website oder App in Wochen statt Monaten 🚀",
-            "subtitle": "Spezialisiert auf React und Next.js",
-            "button": "Kontakt"
-        },
-        "ServiceSection": {
-            "title": "Kompetenzen",
-            "cardsData": [
-                {
-                    "title": "Pixelgenaues und responsives UI",
-                    "description": "Ich erstelle visuell beeindruckende und hochgradig reaktionsfähige Benutzeroberflächen, die auf allen Geräten ansprechend aussehen."
-                },
-                {
-                    "title": "Modernste Technologie",
-                    "description": "Einsatz aktueller Technologien wie React und Next.js, um schnelle und skalierbare Webseiten zu entwickeln."
-                },
-                {
-                    "title": "Maßgeschneiderte Lösungen",
-                    "description": "Jedes Unternehmen ist einzigartig. Ich biete maßgeschneiderte Lösungen, die Ihre spezifischen Bedürfnisse und Ziele erfüllen."
-                },
-                {
-                    "title": "Fortlaufende Unterstützung",
-                    "description": "Meine Dienstleistungen enden nicht mit dem Launch. Ich biete fortlaufende Unterstützung und Wartung, um sicherzustellen, dass Ihre Online-Plattform stets auf dem neuesten Stand bleibt."
-                },
-                {
-                    "title": "SEO-Optimierung",
-                    "description": "Steigern Sie Ihre Online-Sichtbarkeit und ziehen Sie mehr Besucher an mit einer digitalen Lösung, die für Suchmaschinen optimiert ist."
-                }
-            ]
-        }
-        ,
-        "TechnologySection": {
-            "title": "Technologien"
-        },
-        "AboutSection": {
-            "title": "Über mich",
-            "greeting": "Hallo 👋🏻,",
-            "imgText": "Mein Name ist Nizar",
-            "aboutText": {
-                "text1": "Ich bin ein leidenschaftlicher Webentwickler mit einem starken Fokus auf die Erstellung innovativer und benutzerfreundlicher Weblösungen.",
-                "text2": "Mit fundierten Kenntnissen in JavaScript, React und Node.js sowie jahrelanger Erfahrung in der Front-End-Entwicklung erstelle ich ansprechende und effektive Websites und Anwendungen, die den digitalen Anforderungen moderner Unternehmen gerecht werden."
-            }
-        },
-        "ContactForm": {
-            "title": "Lassen Sie uns in Kontakt treten",
-            "formFields": {
-                "name": "Name",
-                "namePlaceholder": "e.g. Max", email: "E-Mail",
-                "emailPlaceholder": "e.g. max@gmail.com",
-                "telephone": "Telefon",
-                "telephonePlaceholder": "+49 323424...",
-                "message": "Nachricht",
-                "messagePlaceholder": "Ihre Nachricht",
-                "button": "Senden"
-            }
-        }
-    }
-]
+const Content: ContentType = {
+  HeroSection: {
+    eyebrow: "◆ Fullstack Developer · Nürnberg, DE",
+    titleLine1: "Produkte",
+    titleLine2: "bauen, die",
+    titleLine3: "wirklich liefern.",
+    subtitle:
+      "Ich arbeite mit Startups und Unternehmen — vom ersten Commit bis zur Produktion. Ich löse echte Probleme und liefere zuverlässig.",
+    ctaPrimary: "Projekt starten →",
+    tags: ["React", "Next.js", "TypeScript", "Node.js", "Tailwind CSS", "Fullstack"],
+    availableBadge: "Verfügbar für Projekte",
+  },
+  StatsSection: {
+    columns: [
+      { label: "Design Systems", sublabel: "Fokus auf Wiederverwendbarkeit" },
+      { label: "Sauberer Code", sublabel: "Fokus auf Problemlösung" },
+      { label: "Nürnberg · DE", sublabel: "Remote weltweit verfügbar" },
+    ],
+  },
+  ServicesSection: {
+    eyebrow: "Was ich tue",
+    cards: [
+      {
+        icon: "⬡",
+        title: "Web- & App-Entwicklung",
+        body: "Ich baue produktionsreife Anwendungen — saubere Architektur, wiederverwendbare Komponenten und ein Fokus auf das eigentliche Problem. Nicht nur zum Laufen bringen, sondern richtig machen.",
+        featured: true,
+      },
+      {
+        icon: "◈",
+        title: "UI Engineering & Design Systems",
+        body: "Von Design-Tokens bis zu Komponentenbibliotheken — ich implementiere Interfaces, die pixelgenau, zugänglich und skalierbar sind.",
+      },
+      {
+        icon: "◎",
+        title: "KI-Integration & Workflows",
+        body: "Ich integriere KI-APIs und Automatisierungsworkflows in Produkte — von LLM-gestützten Features bis zur intelligenten Prozessautomatisierung.",
+      },
+      {
+        icon: "⟁",
+        title: "Beratung & Problemlösung",
+        body: "Architekturentscheidungen, Code-Reviews, Sprint-Support. Ich denke in Systemen und liefere pragmatische Lösungen — egal welche Codebase, egal welches Problem.",
+      },
+    ],
+  },
+  AboutSection: {
+    eyebrow: "Über mich",
+    name: "Hallo, ich bin Nizar.",
+    paragraph1:
+      "Ich bin ein Fullstack-Entwickler aus Nürnberg mit einem tiefen Fokus auf JavaScript-Ökosysteme. Ich baue Dinge, die schnell, wartbar und angenehm zu bedienen sind — für Endnutzer und für Entwickler, die nach mir kommen.",
+    paragraph2:
+      "Mir liegen saubere Architektur, frühe gute Entscheidungen und pünktliche Lieferung am Herzen. Ob ein Produkt von Grund auf oder ein Entwickler zur Teamverstärkung — ich bringe technische Tiefe und pragmatisches Denken mit.",
+    chips: ["JavaScript / TypeScript", "React & Next.js", "Node.js & APIs", "Headless CMS"],
+  },
+  StackSection: {
+    eyebrow: "Tech Stack",
+    items: [
+      "React", "Next.js", "TypeScript", "Node.js",
+      "Tailwind CSS", "Framer Motion", "PostgreSQL", "Drizzle ORM",
+      "Sanity", "Strapi", "Payload CMS", "Remix",
+      "Stripe",
+    ],
+  },
+  ContactSection: {
+    headline: "Haben Sie ein Projekt im",
+    headlineAccent: "Sinn?",
+    subline:
+      "Ob neues Produkt, Redesign oder ein Entwickler auf Abruf — lassen Sie uns sprechen.",
+    cta: "Nachricht senden →",
+    form: {
+      name: "Name",
+      namePlaceholder: "z.B. Max",
+      email: "E-Mail",
+      emailPlaceholder: "z.B. max@beispiel.de",
+      message: "Nachricht",
+      messagePlaceholder: "Erzählen Sie mir von Ihrem Projekt",
+      submit: "Nachricht senden →",
+    },
+  },
+};
 
-export default Content
+export default Content;

@@ -1,33 +1,28 @@
 "use client"
-import React from 'react';
-import { IoLanguageOutline } from 'react-icons/io5'
 
-import { useRouter, usePathname } from 'next/navigation';
+import React from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 const Language: React.FC = () => {
+  const router = useRouter();
+  const path = usePathname();
 
-  const router = useRouter()
-  const path = usePathname()
-
-  const isGerman = path.startsWith('/de');
-  const lang = isGerman ? 'en' : 'de'; // Toggle the 
-  const newPath = isGerman ? path.replace('/de', '/en') : `/de${path}`;
-
-  const toggle = (e: React.MouseEvent<HTMLButtonElement>) => {
-    router.push(newPath, { scroll: false })
-  }
+  const isGerman = path.startsWith("/de");
+  const newPath = isGerman ? path.replace("/de", "/en") : `/de${path}`;
+  const currentLang = isGerman ? "DE" : "EN";
+  const targetLang = isGerman ? "EN" : "DE";
 
   return (
-    <div>
-      <button
-        onClick={toggle}
-        className='text-[1rem] rounded-full flex border-[1px] border-[var(--border)] justify-center items-center h-8 px-2 gap-2' >
-        <IoLanguageOutline />
+    <button
+      onClick={() => router.push(newPath, { scroll: false })}
+      className="flex items-center gap-1 h-8 px-3 rounded-sm border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:border-[var(--color-text-muted)] transition-colors duration-200 font-raleway text-xs tracking-widest"
+      aria-label={`Switch to ${targetLang}`}
+    >
+      <span className="text-[var(--color-text)]">{currentLang}</span>
+      <span className="opacity-30">|</span>
+      <span>{targetLang}</span>
+    </button>
+  );
+};
 
-        {lang === 'de' ? <>🇩🇪</> : <>🇺🇸</>}
-      </button>
-    </div>
-  )
-}
-
-export default Language
+export default Language;

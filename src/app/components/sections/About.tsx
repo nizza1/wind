@@ -7,7 +7,7 @@ import { SectionLabel } from "@/app/components/ui/SectionLabel";
 import { Tag } from "@/app/components/ui/Tag";
 import { AboutSectionType } from "@/app/content/home/types";
 import { fadeUpContainer, fadeUpItemSlow } from "./animations";
-import myImg from "/public/profile/portfolioImage.jpg";
+import myImg from "../../../../public/profile/portfolioImage.jpg";
 
 
 const About = ({ eyebrow, name, paragraph1, paragraph2, chips }: AboutSectionType) => (

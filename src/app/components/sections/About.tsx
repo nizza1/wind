@@ -8,7 +8,8 @@ import { Tag } from "@/app/components/ui/Tag";
 import { AboutSectionType } from "@/app/content/home/types";
 import { fadeUpContainer, fadeUpItemSlow } from "./animations";
 
-import myImg from "/public/me.jpg";
+import myImg from "/public/portfolioImage.jpg";
+
 
 const About = ({ eyebrow, name, paragraph1, paragraph2, chips }: AboutSectionType) => (
   <section id="about" className="max-w-[1100px] mx-auto px-5 py-20">

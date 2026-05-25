@@ -71,10 +71,10 @@ const Hero = (props: HeroSectionType) => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-          className="relative hidden md:block"
+          className="relative hidden md:block w-full"
         >
-          {/* Available badge */}
-          <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-[4px] border border-[var(--color-accent)] bg-[var(--color-bg-card)] font-raleway text-[10px] text-[var(--color-text)] tracking-wide">
+          {/* Available badge — hidden on mobile (no room), visible on desktop */}
+          <div className="hidden md:flex absolute top-3 right-3 z-10 items-center gap-1.5 px-2.5 py-1 rounded-[4px] border border-[var(--color-accent)] bg-[var(--color-bg-card)] font-raleway text-[10px] text-[var(--color-text)] tracking-wide">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse-slow" />
             {availableBadge}
           </div>
@@ -86,6 +86,7 @@ const Hero = (props: HeroSectionType) => {
               alt="Nizar — Fullstack Developer"
               width={260}
               height={347}
+              sizes="(max-width: 768px) 120px, 260px"
               className="w-full object-cover object-top block"
               style={{ filter: "grayscale(15%) contrast(1.05)" }}
               priority

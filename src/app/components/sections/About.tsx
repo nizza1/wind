@@ -21,13 +21,14 @@ const About = ({ eyebrow, name, paragraph1, paragraph2, chips }: AboutSectionTyp
       className="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-8 md:gap-12 items-start"
     >
       {/* Photo strip */}
-      <motion.div variants={fadeUpItemSlow} className="hidden md:block">
-        <div className="overflow-hidden rounded-[4px] border border-[var(--color-border)] w-[160px]">
+      <motion.div variants={fadeUpItemSlow}>
+        <div className="overflow-hidden rounded-[4px] border border-[var(--color-border)] w-[110px] md:w-[160px]">
           <Image
             src={myImg}
             alt="Nizar"
             width={160}
             height={240}
+            sizes="(max-width: 768px) 110px, 160px"
             className="w-full object-cover object-top block"
             style={{ filter: "grayscale(100%) contrast(1.05)" }}
           />

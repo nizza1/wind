@@ -52,7 +52,10 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
     matcher: [
-        '/((?!api|_next/static|_next/image|favicon.ico).*)',
+        // `.*\\..*` excludes any path containing a dot (public/ assets like
+        // /showcase/clock-m/des/home-dark-des.png), which the i18n router
+        // would otherwise treat as a page route and 404.
+        '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
     ],
 }
 

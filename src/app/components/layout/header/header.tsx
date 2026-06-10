@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
+const navLinks: { label: string; hash?: string; route?: string }[] = [
   { label: "Services", hash: "services" },
+  { label: "Work", route: "showcase" },
   { label: "About", hash: "about" },
   { label: "Contact", hash: "contact" },
 ];
@@ -16,11 +17,17 @@ const Header = () => {
   const pathname = usePathname();
 
   const isHome = pathname === "/" || /^\/[a-z]{2}\/?$/.test(pathname);
+  const locale = pathname.match(/^\/([a-z]{2})(?:\/|$)/)?.[1] ?? "en";
 
-  const getNavHref = (hash: string) => {
-    if (isHome) return `#${hash}`;
-    const locale = pathname.match(/^\/([a-z]{2})\//)?.[1] ?? "en";
-    return `/${locale}#${hash}`;
+  // The i18n router does not prefix the default locale (en), so links must
+  // omit it: `/showcase` for en, `/de/showcase` for de. Prefixing en would
+  // 307-redirect to the unprefixed path. For en, the home path is "/".
+  const localePrefix = locale === "de" ? "/de" : "";
+
+  const getNavHref = (link: { hash?: string; route?: string }) => {
+    if (link.route) return `${localePrefix}/${link.route}`;
+    if (isHome) return `#${link.hash}`;
+    return `${localePrefix || "/"}#${link.hash}`;
   };
 
   useEffect(() => {
@@ -60,8 +67,8 @@ const Header = () => {
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
-                  key={link.hash}
-                  href={getNavHref(link.hash)}
+                  key={link.label}
+                  href={getNavHref(link)}
                   className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors duration-150 font-mona"
                 >
                   {link.label}
@@ -73,7 +80,7 @@ const Header = () => {
             <div className="hidden md:flex items-center gap-2">
               {/* <Language /> */}
               <a
-                href={getNavHref("contact")}
+                href={getNavHref({ hash: "contact" })}
                 className="ml-2 inline-flex items-center h-8 px-4 rounded-[4px] bg-[var(--color-accent)] text-[var(--color-accent-text)] text-sm font-mona font-semibold hover:opacity-90 transition-opacity duration-150"
               >
                 Get in touch
@@ -122,8 +129,8 @@ const Header = () => {
           <nav className="flex flex-col gap-2 p-8 flex-1">
             {navLinks.map((link) => (
               <a
-                key={link.hash}
-                href={getNavHref(link.hash)}
+                key={link.label}
+                href={getNavHref(link)}
                 onClick={() => setMobileOpen(false)}
                 className="text-3xl font-mona font-bold text-[var(--color-text)] py-3 border-b border-[var(--color-border)] hover:text-[var(--color-accent)] transition-colors"
               >
@@ -135,7 +142,7 @@ const Header = () => {
           <div className="flex items-center gap-3 p-8 border-t border-[var(--color-border)]">
             {/* <Language /> */}
             <a
-              href={getNavHref("contact")}
+              href={getNavHref({ hash: "contact" })}
               onClick={() => setMobileOpen(false)}
               className="ml-auto inline-flex items-center h-9 px-5 rounded-[4px] bg-[var(--color-accent)] text-[var(--color-accent-text)] text-sm font-mona font-semibold"
             >

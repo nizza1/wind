@@ -1,0 +1,88 @@
+"use client"
+
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { SectionLabel } from "@/app/components/ui/SectionLabel";
+import { Tag } from "@/app/components/ui/Tag";
+import { Button } from "@/app/components/ui/Button";
+import { ShowcaseTeaserType } from "@/app/content/showcase/types";
+import { fadeUpContainer, fadeUpItemSlow } from "./animations";
+
+type Props = ShowcaseTeaserType & { locale: string };
+
+const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, locale }: Props) => (
+  <section id="work" className="max-w-[1100px] mx-auto px-5 py-20">
+    <SectionLabel>{eyebrow}</SectionLabel>
+    <motion.div
+      variants={fadeUpContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-80px" }}
+    >
+      <motion.div
+        variants={fadeUpItemSlow}
+        className="grid grid-cols-1 md:grid-cols-[1fr_minmax(300px,420px)] gap-8 md:gap-10 items-center p-7 sm:p-8 rounded-[4px] bg-[var(--color-bg-card)] border border-[var(--color-border)] transition-colors duration-200"
+        whileHover={{ borderColor: "rgba(200,255,0,0.25)", transition: { duration: 0.2 } }}
+      >
+        {/* Text */}
+        <div className="flex flex-col gap-5">
+          <span className="font-raleway text-[11px] text-[var(--color-text-muted)] tracking-[0.1em] uppercase">
+            {label}
+          </span>
+
+          <div className="flex flex-col gap-3">
+            <h3 className="font-mona font-extrabold text-[clamp(1.75rem,4vw,2.5rem)] text-[var(--color-text)] tracking-[-0.03em] leading-tight">
+              {name.split("-").slice(0, -1).join("-")}
+              {name.includes("-") && "-"}
+              <em className="text-[var(--color-accent)] not-italic">{name.split("-").at(-1)}</em>
+            </h3>
+            <p className="text-sm text-[var(--color-text-muted)] leading-[1.7] max-w-[58ch]">
+              {tagline}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </div>
+
+          <div className="pt-1">
+            <Button variant="accent" href={locale === "de" ? "/de/showcase" : "/showcase"}>
+              {cta}
+            </Button>
+          </div>
+        </div>
+
+        {/* Layered screenshots */}
+        {images.length > 0 && (
+          <div className={`relative ${images[1] ? "pb-10 pl-6" : ""}`}>
+            <div className="relative aspect-[2940/1912] overflow-hidden rounded-[4px] border border-[var(--color-border)]">
+              <Image
+                src={images[0].src}
+                alt={images[0].alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className="object-cover object-top"
+              />
+            </div>
+            {images[1] && (
+              <div className="absolute bottom-0 left-0 w-[58%] aspect-[2940/1912] overflow-hidden rounded-[4px] border border-[var(--color-border)] shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                <Image
+                  src={images[1].src}
+                  alt={images[1].alt}
+                  fill
+                  sizes="(max-width: 768px) 60vw, 250px"
+                  className="object-cover object-top"
+                />
+              </div>
+            )}
+          </div>
+        )}
+      </motion.div>
+    </motion.div>
+  </section>
+);
+
+export default LatestProject;

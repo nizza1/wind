@@ -58,7 +58,7 @@ const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, local
         {/* Layered screenshots */}
         {images.length > 0 && (
           <div className={`relative ${images[1] ? "pb-10 pl-6" : ""}`}>
-            <div className="relative aspect-[2940/1912] overflow-hidden rounded-[4px] border border-[var(--color-border)]">
+            <div className="relative aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)]">
               <Image
                 src={images[0].src}
                 alt={images[0].alt}
@@ -68,7 +68,7 @@ const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, local
               />
             </div>
             {images[1] && (
-              <div className="absolute bottom-0 left-0 w-[58%] aspect-[2940/1912] overflow-hidden rounded-[4px] border border-[var(--color-border)] shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+              <div className="absolute bottom-0 left-0 w-[58%] aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)] shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
                 <Image
                   src={images[1].src}
                   alt={images[1].alt}

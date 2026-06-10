@@ -63,7 +63,7 @@ const Screenshot = ({
 
   return (
     <figure
-      className={`group relative h-full w-full overflow-hidden rounded-[4px] border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-colors duration-200 hover:border-[rgba(200,255,0,0.25)] ${
+      className={`group relative h-full w-full overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)] bg-[var(--color-bg-card)] transition-colors duration-200 hover:border-[rgba(200,255,0,0.45)] ${
         variant === "mobile" ? "aspect-[758/1640]" : ""
       }`}
     >
@@ -185,7 +185,7 @@ const ProjectShowcase = ({ project, copy }: Props) => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="hidden md:grid md:grid-cols-6 md:auto-rows-[96px] gap-3"
+          className="hidden md:grid md:grid-cols-6 md:auto-rows-[96px] gap-5"
         >
           {project.screenshots.map((shot) => (
             <motion.div key={shot.caption} variants={fadeUpItem} className={bentoSpan[shot.size]}>
@@ -199,7 +199,7 @@ const ProjectShowcase = ({ project, copy }: Props) => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-2 gap-3 md:hidden"
+          className="grid grid-cols-2 gap-4 md:hidden"
         >
           {project.screenshots
             .filter((shot) => shot.srcMobile || !shot.srcDesktop)

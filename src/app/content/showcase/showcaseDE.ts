@@ -14,6 +14,10 @@ const ShowcaseDE: ShowcaseContentType = {
       { src: "/showcase/clock-m/des/home-dark-des.png", alt: "Clock-M Dashboard mit Live-Timer" },
       { src: "/showcase/clock-m/des/report-des.png", alt: "Clock-M Monatsbericht" },
     ],
+    phoneImage: {
+      src: "/showcase/clock-m/rn-ai/native-app.png",
+      alt: "Clock-M React-Native-Companion-App",
+    },
   },
   page: {
     eyebrow: "Showcase",

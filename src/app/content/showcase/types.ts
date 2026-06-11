@@ -58,6 +58,8 @@ export interface ShowcaseTeaserType {
   cta: string;
   /** One or two (dark) screenshots layered next to the teaser text. */
   images: { src: string; alt: string }[];
+  /** Optional portrait phone screenshot, skewed in over the layered shots. */
+  phoneImage?: { src: string; alt: string };
 }
 
 /** Localized chrome for the /showcase page (labels + demo-form strings). */

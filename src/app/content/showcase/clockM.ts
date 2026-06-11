@@ -30,8 +30,9 @@ const clockM: ShowcaseProjectType = {
       size: "hero",
     },
     {
-      // Native app screenshot pending — renders as a tall placeholder tile.
-      alt: "Clock-M native mobile app",
+      srcDesktop: "/showcase/clock-m/rn-ai/native-app.png",
+      srcMobile: "/showcase/clock-m/rn-ai/native-app.png",
+      alt: "Clock-M native mobile app — timer screen",
       caption: "Mobile app — a React Native companion app.",
       size: "tall",
     },
@@ -109,19 +110,13 @@ const clockM: ShowcaseProjectType = {
       srcMobile: "/showcase/clock-m/mob/lang-region-mob.png",
       alt: "Clock-M language and region settings",
       caption: "i18n — 5 languages, per-user region settings.",
-      size: "small",
+      size: "wide",
     },
     {
-      // Screenshot pending — placeholder tile.
-      alt: "Clock-M AI assistant chat",
+      srcDesktop: "/showcase/clock-m/rn-ai/ai-assistant.png",
+      alt: "Clock-M AI assistant chat with a streamed project summary",
       caption: "AI assistant — chat with project & file context.",
-      size: "small",
-    },
-    {
-      // Screenshot pending — placeholder tile.
-      alt: "Clock-M file storage",
-      caption: "Storage — folders, sharing, direct-to-cloud uploads.",
-      size: "small",
+      size: "wide",
     },
   ],
   features: [

@@ -11,7 +11,7 @@ import { fadeUpContainer, fadeUpItemSlow } from "./animations";
 
 type Props = ShowcaseTeaserType & { locale: string };
 
-const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, locale }: Props) => (
+const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, phoneImage, locale }: Props) => (
   <section id="work" className="max-w-[1100px] mx-auto px-5 py-20">
     <SectionLabel>{eyebrow}</SectionLabel>
     <motion.div
@@ -55,29 +55,51 @@ const LatestProject = ({ eyebrow, label, name, tagline, tags, cta, images, local
           </div>
         </div>
 
-        {/* Layered screenshots */}
+        {/* Layered screenshots — desktop shots stacked, with the phone app skewed in on top */}
         {images.length > 0 && (
-          <div className={`relative ${images[1] ? "pb-10 pl-6" : ""}`}>
-            <div className="relative aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)]">
-              <Image
-                src={images[0].src}
-                alt={images[0].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 420px"
-                className="object-cover object-top"
-              />
-            </div>
-            {images[1] && (
-              <div className="absolute bottom-0 left-0 w-[58%] aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)] shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+          <div
+            className="relative rounded-[8px] p-5 sm:p-6 pb-12 overflow-hidden border border-[color-mix(in_srgb,var(--color-accent)_18%,transparent)]"
+            style={{
+              background:
+                "radial-gradient(120% 120% at 80% 0%, rgba(200,255,0,0.10), rgba(200,255,0,0.02) 55%, transparent 80%), var(--color-bg)",
+            }}
+          >
+            <div className={`relative ${images[1] ? "pb-10 pl-6" : ""} ${phoneImage ? "pr-10" : ""}`}>
+              <div className="relative aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)]">
                 <Image
-                  src={images[1].src}
-                  alt={images[1].alt}
+                  src={images[0].src}
+                  alt={images[0].alt}
                   fill
-                  sizes="(max-width: 768px) 60vw, 250px"
+                  sizes="(max-width: 768px) 100vw, 420px"
                   className="object-cover object-top"
                 />
               </div>
-            )}
+              {images[1] && (
+                <div className="absolute bottom-0 left-0 w-[52%] aspect-[2940/1912] overflow-hidden rounded-[6px] border border-[color-mix(in_srgb,var(--color-text)_22%,transparent)] shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+                  <Image
+                    src={images[1].src}
+                    alt={images[1].alt}
+                    fill
+                    sizes="(max-width: 768px) 60vw, 220px"
+                    className="object-cover object-top"
+                  />
+                </div>
+              )}
+              {phoneImage && (
+                <div
+                  className="absolute -bottom-6 right-0 w-[26%] aspect-[758/1640] overflow-hidden rounded-[10px] border-2 border-[color-mix(in_srgb,var(--color-text)_28%,transparent)] shadow-[0_12px_40px_rgba(0,0,0,0.55)]"
+                  style={{ transform: "rotate(6deg)" }}
+                >
+                  <Image
+                    src={phoneImage.src}
+                    alt={phoneImage.alt}
+                    fill
+                    sizes="(max-width: 768px) 28vw, 120px"
+                    className="object-cover object-top"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         )}
       </motion.div>
